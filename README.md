@@ -249,7 +249,14 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 }
 ```
 
-### 5. GET /api/products/stock-movements?code={}
+### 5. GET /products/sku
+**Descrição:** Página de pesquisa de produto pelo códico sku.
+
+
+
+### --------Bonus------
+
+### 1. GET /api/products/stock-movements?code={}
 **Descrição:** Lista as movimentações dos últimos 30 dias de um produto no estoque.
 
 **Paramentros:**
@@ -306,4 +313,8 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
     "error": "Informe o código SKU"
 }
 ```
+
+
+### 2. GET products/stock-movements/recent
+**Descrição:** Página das movimentações dos últimos 30.
 
