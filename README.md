@@ -44,3 +44,13 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
  4. Rode o Composer para instalar as dependências
     ```bash
     composer install
+
+## Rotas do projeto
+
+### 1. GET /api/users  
+**Descrição:** Retorna a lista de produtos.
+
+**Exemplo de Request:**
+
+```json
+{}
