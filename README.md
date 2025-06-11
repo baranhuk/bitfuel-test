@@ -49,6 +49,9 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 
 ### 1. GET /api/users  
 **Descrição:** Retorna a lista de produtos.
+
+**Paramentros:**
+
 ***Paramtes:*** Retorna a lista de produtos.
 
 **Exemplo de Request:**
