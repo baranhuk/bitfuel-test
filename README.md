@@ -46,6 +46,8 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
     ```bash
     composer install
     ```
+### Não se esqueça de informar a sua URL base no arquivo .env
+
 ### Observaçao 
 Em ambientes de localhost, como Laragon, WampServer, XAMPP ou outros, quando o projeto estiver em uma subpasta, é necessário informar o caminho da subpasta no arquivo index.php em 
 
