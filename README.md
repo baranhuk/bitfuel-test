@@ -46,6 +46,23 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
     ```bash
     composer install
     ```
+### Observaçao 
+Em ambientes de localhost, como Laragon, WampServer, XAMPP ou outros, quando o projeto estiver em uma subpasta, é necessário informar o caminho da subpasta no arquivo index.php em 
+
+```php
+    Router::dispatch();
+```
+***Exemplo***.
+```php
+    Router::dispatch("subpasta/");
+```
+Se estiver usando VirtualHost, como o suporte oferecido pelo Laragon, não é necessário informar a subpasta. O mesmo se aplica para containers Docker.
+
+O projeto já possui uma estrutura para container, basta rodar o comando.
+```bash
+    docker compose up
+```
+
 
 ## Rotas do projeto
 
