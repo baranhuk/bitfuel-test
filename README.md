@@ -25,14 +25,22 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 
 ## Tecnologias Utilizadas
 
-- PHP (versão X.X, sem frameworks)  
-- Banco de Dados: PostgreSQL ou MySQL  
-- JavaScript puro ou jQuery para frontend  
+- PHP (versão 8.3, sem frameworks)  
+- Banco de Dados: MySQL  
+- Frontend: HTML, CSS e jQuery   
 
 ---
 
 ## Como Rodar o Projeto
+1. Clone o repositório
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seuusuario/seurepositorio.git
+    ```bash
+    git clone https://github.com/seuusuario/seuprojeto.git
+ 
+ 2. Crie um banco de dados e importe a estrutura que se encontra na pasta dataBase
+ 
+ 3. Configure seu arquivo .env com base no arquivo .env.example
+
+ 4. Rode o Composer para instalar as dependências
+    ```bash
+    composer install
