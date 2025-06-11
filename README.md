@@ -80,6 +80,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
             "last_page": 41
         }
     }
+    ```
 
 
 
@@ -98,7 +99,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 
 **Exemplo de Requisição **
 
- ```json
+```json
  {
   "name": "Unidade de comando eletrônico (ECU)",
   "sku": "VEI-ELT-006",
@@ -142,5 +143,44 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 ```json
 {
     "message": "Ocorreu um erro ao registrar a entrada do produto. Tente novamente mais tarde.",    
+}
+```
+
+### 2. POST /api/products/sku?code={}
+**Descrição:** Novo Produto produtos.
+
+**Paramentros:**
+
+***code***: string.
+
+**Exemplo de Resposta - 200 **
+```json
+{
+    "data": {
+        "id": 35,
+        "id_stock": 35,
+        "name": "Coxim do motor",
+        "cost": 110,
+        "quantity": 10,
+        "sku": "VEI-MOT-007",
+        "created_at": "2025-06-11 00:55:11",
+        "updated_at": "2025-06-11 00:55:11",
+        "stock_updated_at": "2025-06-11 00:55:11"
+    }
+}
+```
+
+**Exemplo de Resposta - 404 **
+```json
+{
+    "message": "Produto não encontrado"
+}
+```
+
+**Exemplo de Resposta - 422 **
+```json
+{
+    "message": "Erro de validação",
+    "error": "Informe o código SKU"
 }
 ```
