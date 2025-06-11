@@ -1,0 +1,35 @@
+services:
+  php-apache-environment:
+    command: >
+      bash -c "a2enmod rewrite && apache2-foreground"
+    container_name: bitfuel
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - 8000:80
+    depends_on:
+      - db
+  db:
+    container_name: bitfuel-db
+    image: mysql
+
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: dan010br
+      MYSQL_DATABASE: bitfuel
+      MYSQL_USER: bitfuel
+      MYSQL_PASSWORD: dan010br
+    ports:
+      - "3306:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    restart: always
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
