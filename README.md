@@ -80,7 +80,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
             "last_page": 41
         }
     }
-```
+
 
 
 ### 2. POST /api/products 
