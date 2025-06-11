@@ -80,14 +80,30 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
     }
 
 
-### 1. GET /api/products?page={}&perPage={}  
-**Descrição:** Retorna a lista de produtos.
+### 2. POST /api/products 
+**Descrição:** Novo Produto produtos.
 
 **Paramentros:**
 
-***page***: int.
+***name***: string.
 
-***perPage***: int | Não obrigatório.
+***sku***: string.
 
-**Exemplo de Resposta - 200**
-***Se não for encontados produros a resposta ainda e 200 mais o data estara vazio "data": []***:
+***cost***: double.
+
+***quantity***: double | Não obrigatório | Utiizado para criar o produro e ja realizar uma entrada no estoque.
+
+**Exemplo de Requisição **
+ ```json
+ {
+  "name": "Unidade de comando eletrônico (ECU)",
+  "sku": "VEI-ELT-006",
+  "cost": 1150.00
+}
+**ou***.
+ {
+  "name": "Unidade de comando eletrônico (ECU)",
+  "sku": "VEI-ELT-006",
+  "cost": 1150.00,
+  "quantity": 1
+}
