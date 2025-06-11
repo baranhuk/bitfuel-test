@@ -159,7 +159,7 @@
                         const btnSearchElem = $('#btn-search');
                         const codigoSkuElem = $("#codigo-sku");
                         $.ajax({
-                            url: '/api/products/sku',
+                            url: "<?php echo $_ENV['URL'] . 'api/products/sku'; ?>",
                             contentType: 'application/json',
                             type: 'GET',
                             data: {

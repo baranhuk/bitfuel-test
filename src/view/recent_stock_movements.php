@@ -159,7 +159,8 @@
                         const btnSearchElem = $('#btn-search');
                         const codigoSkuElem = $("#codigo-sku");
                         $.ajax({
-                            url: '/api/products/stock-movements',
+                            url: "<?php echo $_ENV['URL'] . 'api/products/stock-movements'; ?>",
+
                             contentType: 'application/json',
                             type: 'GET',
                             data: {

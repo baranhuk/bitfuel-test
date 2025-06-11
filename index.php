@@ -4,6 +4,8 @@ require 'src/config/config.php';
 use src\controllers\ProductController;
 use src\Core\Router\Router;
 
+
+
 Router::get('products/sku', [ProductController::class, 'showProductSearchBySkuView']);
 Router::get('products/stock-movements/recent', [ProductController::class, 'showLast30DaysStockMovementsView']);
 
@@ -14,4 +16,4 @@ Router::get('api/products/stock-movements', [ProductController::class, 'getLast3
 Router::put('api/products/update-stock', [ProductController::class, 'updateStockQuantity']);
 
 
-Router::dispatch();
+Router::dispatch("bitfuel-test/");

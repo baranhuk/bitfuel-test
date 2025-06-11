@@ -3,8 +3,10 @@
 namespace  src\Core\Router;
 
 class Router
+
 {
     protected static array $routes = [];
+
 
     /**
      * Add rota do tipo GET.
@@ -71,7 +73,7 @@ class Router
     {
         self::$routes[$method][] = [
             'action' => $action,
-            'url' => $url,
+            'url' =>   $url,
         ];
     }
 
@@ -82,7 +84,7 @@ class Router
      * @access public
      * @return void
      */
-    public static function dispatch(): void
+    public static function dispatch(string $sub_folder = ""): void
     {
         $method = $_SERVER['REQUEST_METHOD'];
         $requestUri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
@@ -91,15 +93,14 @@ class Router
         $Accept = $_SERVER['HTTP_ACCEPT'] ?? '';
         $retorno_json = false;
 
-
-
         if ($Accept == 'application/json') {
             $retorno_json = true;
             header('Content-Type: application/json');
         }
 
         foreach ($routes as $route) {
-            if (hash_equals($requestUri, $route['url'])) {
+            $routeUri = $sub_folder . $route['url'];
+            if (hash_equals($requestUri, $routeUri)) {
                 $contentType = $_SERVER['CONTENT_TYPE'] ?? '';
                 $jsonData = null;
                 if (
