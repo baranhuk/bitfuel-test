@@ -185,7 +185,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 }
 ```
 
-### 4. POST /api/products/update-stock?id={}
+### 4. PUT /api/products/update-stock?id={}
 **Descrição:** Atualiza a quantidade de um produto, incrementando ou decrementando.
 
 **Paramentros:**
@@ -193,7 +193,8 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 
 **Paramentros body:**
 ***type***: string | Tipos são: E para entrada e S para saída.
-***quantity***: string.
+
+***quantity***: double.
 
 
 **Exemplo de Resposta - 200 **
@@ -247,3 +248,62 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
     "message": "Erro ao registrar a movimentação estoque não atualizado",
 }
 ```
+
+### 5. GET /api/products/stock-movements?code={}
+**Descrição:** Lista as movimentações dos últimos 30 dias de um produto no estoque.
+
+**Paramentros:**
+***code***: string.
+
+**Exemplo de Resposta - 200 **
+```json
+{
+    "id": 1,
+    "id_stock": 1,
+    "name": "Filtro de óleo",
+    "cost": 25.9,
+    "quantity": 9,
+    "sku": "VEI-MOT-001",
+    "created_at": "2025-06-11 00:45:31",
+    "updated_at": "2025-06-11 00:45:31",
+    "stock_updated_at": "2025-06-11 14:29:55",
+    "movements": [      
+        {
+            "id": 13,
+            "product_id": 1,
+            "type": "S",
+            "quantity": 1,
+            "date": "2025-06-11 01:24:00"
+        },
+        {
+            "id": 12,
+            "product_id": 1,
+            "type": "E",
+            "quantity": 1,
+            "date": "2025-06-11 01:02:00"
+        },
+        {
+            "id": 1,
+            "product_id": 1,
+            "type": "E",
+            "quantity": 10,
+            "date": "2025-06-11 00:31:00"
+        }
+    ]
+}
+```
+**Exemplo de Resposta - 404 **
+```json
+{
+    "message": "Produto não encontrado"
+}
+```
+
+**Exemplo de Resposta - 422 **
+```json
+{
+    "message": "Erro de validação",
+    "error": "Informe o código SKU"
+}
+```
+
