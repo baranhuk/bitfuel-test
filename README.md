@@ -52,8 +52,9 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 
 **Paramentros:**
 
-***page*** int.
-***perPage*** int | Não obrigatório.
+***page***: int.
+
+***perPage***: int | Não obrigatório.
 
 **Exemplo de Resposta - 200**
 
