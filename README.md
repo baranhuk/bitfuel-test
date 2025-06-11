@@ -35,7 +35,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 1. Clone o repositório
 
     ```bash
-    git clone https://github.com/seuusuario/seuprojeto.git
+    git clone https://github.com/baranhuk/bitfuel-test.git
     ```
  
  2. Crie um banco de dados e importe a estrutura que se encontra na pasta dataBase
