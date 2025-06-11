@@ -47,14 +47,32 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 
 ## Rotas do projeto
 
-### 1. GET /api/users  
+### 1. GET /api/products?page={}&perPage={}  
 **Descrição:** Retorna a lista de produtos.
 
 **Paramentros:**
 
-***Paramtes:*** Retorna a lista de produtos.
+***page*** int.
+***perPage*** int | Não obrigatório.
 
-**Exemplo de Request:**
+**Exemplo de Resposta - 200**
 
 ```json
-{}
+{
+    "data": [
+        {
+            "id": 20,
+            "name": "Alternador",
+            "sku": "VEI-ELT-001",
+            "cost": 389,
+            "created_at": "2025-06-11 00:53:12",
+            "updated_at": "2025-06-11 00:53:12"
+        }
+    ],
+    "meta": {
+        "current_page": 1,
+        "per_page": 1,
+        "total": 41,
+        "last_page": 41
+    }
+}
