@@ -98,14 +98,20 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
  {
   "name": "Unidade de comando eletrônico (ECU)",
   "sku": "VEI-ELT-006",
-  "cost": 1150.00
-}
-
-***ou***
-
- {
-  "name": "Unidade de comando eletrônico (ECU)",
-  "sku": "VEI-ELT-006",
   "cost": 1150.00,
   "quantity": 1
+}
+
+**Exemplo de Resposta - 201 **
+```json
+{
+    "id": 42,
+    "id_stock": 42,
+    "name": "Unidade de comando eletrônico (ECU)",
+    "cost": 1150,
+    "quantity": 0,
+    "sku": "VEI-ELT-006",
+    "created_at": "2025-06-11 14:10:00",
+    "updated_at": "2025-06-11 14:10:00",
+    "stock_updated_at": "2025-06-11 14:10:00"
 }
