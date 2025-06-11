@@ -59,6 +59,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 ***perPage***: int | Não obrigatório.
 
 **Exemplo de Resposta - 200**
+
 ***Se não for encontados produros a resposta ainda e 200 mais o data estara vazio "data": []***:
 
 ```json
@@ -192,6 +193,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 ***id***: string.
 
 **Paramentros body:**
+
 ***type***: string | Tipos são: E para entrada e S para saída.
 
 ***quantity***: double.
