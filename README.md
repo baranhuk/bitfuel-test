@@ -36,6 +36,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 
     ```bash
     git clone https://github.com/seuusuario/seuprojeto.git
+    ```
  
  2. Crie um banco de dados e importe a estrutura que se encontra na pasta dataBase
  
@@ -44,6 +45,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
  4. Rode o Composer para instalar as dependências
     ```bash
     composer install
+    ```
 
 ## Rotas do projeto
 
@@ -78,6 +80,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
             "last_page": 41
         }
     }
+```
 
 
 ### 2. POST /api/products 
@@ -94,6 +97,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 ***quantity***: double | Não obrigatório | Utiizado para criar o produro e ja realizar uma entrada no estoque.
 
 **Exemplo de Requisição **
+
  ```json
  {
   "name": "Unidade de comando eletrônico (ECU)",
@@ -116,3 +120,27 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
     "updated_at": "2025-06-11 14:10:00",
     "stock_updated_at": "2025-06-11 14:10:00"
 }
+```
+
+
+**Exemplo de Resposta - 409 **
+```json
+{
+    "message": "Já existe um produto com esse código SKU"
+}
+```
+
+**Exemplo de Resposta - 422 **
+```json
+{
+    "message": "Erro de validação",
+    "error": "O valor deve ser do tipo double ou int"
+}
+```
+
+**Exemplo de Resposta - 500 **
+```json
+{
+    "message": "Ocorreu um erro ao registrar a entrada do produto. Tente novamente mais tarde.",    
+}
+```
