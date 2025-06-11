@@ -101,6 +101,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
   "cost": 1150.00,
   "quantity": 1
 }
+```
 
 **Exemplo de Resposta - 201 **
 ```json
