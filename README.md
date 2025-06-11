@@ -256,7 +256,7 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 
 
 
-### --------Bonus------
+### --------Bonus--------
 
 ### 1. GET /api/products/stock-movements?code={}
 **Descrição:** Lista as movimentações dos últimos 30 dias de um produto no estoque.
