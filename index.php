@@ -16,4 +16,4 @@ Router::get('api/products/stock-movements', [ProductController::class, 'getLast3
 Router::put('api/products/update-stock', [ProductController::class, 'updateStockQuantity']);
 
 
-Router::dispatch("bitfuel-test/");
+Router::dispatch();
