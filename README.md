@@ -100,7 +100,10 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
   "sku": "VEI-ELT-006",
   "cost": 1150.00
 }
+
 **ou***.
+
+```json
  {
   "name": "Unidade de comando eletrônico (ECU)",
   "sku": "VEI-ELT-006",
