@@ -85,9 +85,9 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 
 
 ### 2. POST /api/products 
-**Descrição:** Novo Produto produtos.
+**Descrição:** Novo Produto.
 
-**Paramentros:**
+**Paramentros body:**
 
 ***name***: string.
 
@@ -146,8 +146,8 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 }
 ```
 
-### 3. POST /api/products/sku?code={}
-**Descrição:** Novo Produto produtos.
+### 3. GET /api/products/sku?code={}
+**Descrição:** Busca um Produto pelo código SKU.
 
 **Paramentros:**
 
@@ -182,5 +182,68 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 {
     "message": "Erro de validação",
     "error": "Informe o código SKU"
+}
+```
+
+### 4. POST /api/products/update-stock?id={}
+**Descrição:** Atualiza a quantidade de um produto, incrementando ou decrementando.
+
+**Paramentros:**
+***id***: string.
+
+**Paramentros body:**
+***type***: string | Tipos são: E para entrada e S para saída.
+***quantity***: string.
+
+
+**Exemplo de Resposta - 200 **
+```json
+{  
+    "type": "S",
+    "quantity": 1
+}
+```
+
+**Exemplo de Resposta - 201 **
+```json
+{
+    "message": "Estoque atualizado com sucesso",
+    "data": {
+        "stock": {
+            "id": 1,
+            "product_id": 1,
+            "quantity": 9,
+            "updated_at": "2025-06-11 14:29:55"
+        },
+        "movement": {
+            "id": 15,
+            "product_id": 1,
+            "quantity": 1,
+            "type": "S",
+            "date": "2025-06-11 14::55"
+        }
+    }
+}
+```
+
+**Exemplo de Resposta - 404 **
+```json
+{
+    "message": "Estoque não encontrado para o produto informado",
+}
+```
+
+**Exemplo de Resposta - 422 **
+```json
+{
+    "message": "Erro de validação",
+    "error": "Tipo de movimentação inválido"
+}
+```
+
+**Exemplo de Resposta - 500 **
+```json
+{
+    "message": "Erro ao registrar a movimentação estoque não atualizado",
 }
 ```
