@@ -57,23 +57,37 @@ Além disso, crie um HTML simples com JavaScript puro (ou jQuery) que permita co
 ***perPage***: int | Não obrigatório.
 
 **Exemplo de Resposta - 200**
+***Se não for encontados produros a resposta ainda e 200 mais o data estara vazio "data": []***:
 
-```json
-{
-    "data": [
-        {
-            "id": 20,
-            "name": "Alternador",
-            "sku": "VEI-ELT-001",
-            "cost": 389,
-            "created_at": "2025-06-11 00:53:12",
-            "updated_at": "2025-06-11 00:53:12"
+    ```json
+    {
+        "data": [
+            {
+                "id": 20,
+                "name": "Alternador",
+                "sku": "VEI-ELT-001",
+                "cost": 389,
+                "created_at": "2025-06-11 00:53:12",
+                "updated_at": "2025-06-11 00:53:12"
+            }
+        ],
+        "meta": {
+            "current_page": 1,
+            "per_page": 1,
+            "total": 41,
+            "last_page": 41
         }
-    ],
-    "meta": {
-        "current_page": 1,
-        "per_page": 1,
-        "total": 41,
-        "last_page": 41
     }
-}
+
+
+### 1. GET /api/products?page={}&perPage={}  
+**Descrição:** Retorna a lista de produtos.
+
+**Paramentros:**
+
+***page***: int.
+
+***perPage***: int | Não obrigatório.
+
+**Exemplo de Resposta - 200**
+***Se não for encontados produros a resposta ainda e 200 mais o data estara vazio "data": []***:
